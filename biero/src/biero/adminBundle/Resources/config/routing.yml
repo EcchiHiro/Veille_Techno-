@@ -1,0 +1,21 @@
+admin_homepage:
+    path:     /
+    defaults: { _controller: adminBundle:Admin:index }
+        
+admin_delete:
+    path:     /biere/{id}/delete
+    defaults: { _controller: adminBundle:Admin:delete }
+    requirements:
+        id: \d+  
+
+admin_modif:
+    path:     /biere/{id}/modif
+    defaults: { _controller: adminBundle:Admin:modif }
+    requirements:
+        id: \d+   
+        
+admin_add:
+    path:     /biere/ajout
+    defaults: { _controller: adminBundle:Admin:add }
+
+    

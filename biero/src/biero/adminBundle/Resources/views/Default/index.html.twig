@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <body>
+   <h1>Liste des bières -- ADMINISTRATION</h1>
+    <p>     
+      {% for biere in listeBieres %}
+        <li>{{ biere.nom }}</li>
+        <li>{{ biere.brasserie }}</li>
+<!--        <li>{{ biere.description }}</li>-->
+        <li>{{ biere.image }}</li>
+        <li>{{ biere.dateAjout|date("m/d/Y", false) }}</li></br>
+        
+        <p>    
+            <a href="{{ path('admin_modif', {'id':  biere.id}) }}" class="btn btn-default">
+              <i class="glyphicon glyphicon-edit"></i>
+              Modifier la bière
+            </a>    
+            </br>   
+            <a href="{{ path('admin_delete', {'id':  biere.id}) }}" class="btn btn-default">
+              <i class="glyphicon glyphicon-edit"></i>
+              Supprimer la bière
+            </a>            
+        </p>
+
+      {% endfor %}
+    </ul>
+  </body>
+              <a href="{{ path('admin_add') }}" class="btn btn-default">
+              <i class="glyphicon glyphicon-edit"></i>
+              Ajouter une bière
+            </a>
+</html>
+

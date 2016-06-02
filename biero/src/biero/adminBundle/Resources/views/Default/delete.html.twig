@@ -1,0 +1,23 @@
+{# src/biero/adminBundle/Resources/views/Advert/delete.html.twig #}
+
+{% block admin_delete_body %}
+
+  <h2>Supprimer une annonce</h2>
+
+  <p>
+    Etes-vous certain de vouloir supprimer la bière "{{ biere.nom }}" ?
+  </p>
+  <a href="{{ path('admin_homepage') }}" class="btn btn-default">
+      <i class="glyphicon glyphicon-chevron-left"></i>
+      Retour à l'accueil
+    </a>
+
+  {# On met l'id de l'annonce dans la route de l'action du formulaire #}
+  <form action="{{ path('admin_delete', {'id': biere.id}) }}" method="post">
+    {# Ici j'ai écrit le bouton de soumission à la main #}
+    <input type="submit" value="Supprimer" class="btn btn-danger" />
+    {# Ceci va générer le champ CSRF #}
+    {{ form_rest(form) }}
+  </form>
+
+{% endblock %}

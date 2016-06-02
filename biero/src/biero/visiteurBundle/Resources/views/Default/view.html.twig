@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <body>
+   <h1>Bière numéro {{ biere.id }} </h1>
+    <p>     
+
+        <li>{{ biere.nom }}</li>
+        <li>{{ biere.brasserie }}</li>
+       <li>{{ biere.description }}</li>
+        <li>{{ biere.image }}</li>
+        <li>{{ biere.dateAjout|date("m/d/Y", false) }}</li></br>
+        
+        <h3>Liste des commentaires</h3>
+                
+        {% for commentaire in listeCommentaires %}
+        {{ commentaire.commentaire }}
+        {{ commentaire.dateAjout|date("m/d/Y", false) }}
+        {% endfor %}        
+        
+        <h3>Liste des notes</h3>
+        
+        {% for note in listeNotes %}
+        {{ note.note }}
+        {% endfor %}
+         
+        <p>
+           <h2>Ajouter un commentaire</h2>
+            <div class="well">
+              {{ form(form) }}
+            </div>           
+        </p>        
+           
+        <p>
+        <h2>Ajouter une note</h2>
+            <div class="well">
+              {{ form(form2) }}
+            </div>           
+        </p>
+
+     
+    </ul>
+  </body>
+</html>

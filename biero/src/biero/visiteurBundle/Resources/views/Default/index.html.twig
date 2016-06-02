@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <body>
+   <h1>Liste des bières</h1>
+   
+    <div class="listeBieres">     
+          {% for biere in listeBieres %}
+            <div class="uneBiere">    
+                <img src="{{ biere.image }}" alt="imgBiere">
+                <li>{{ biere.nom }}</li>
+                <li>{{ biere.brasserie }}</li>
+                <li>{{ biere.dateAjout|date("m/d/Y", false) }}</li></br>
+
+                <p>
+                    <a href="{{ path('visiteur_biere', {'id':  biere.id}) }}">
+                      En savoir plus
+                    </a>            
+                </p>
+            </div>
+          {% endfor %}
+    </div>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+admin:
+    resource: "@adminBundle/Resources/config/routing.yml"
+    prefix:   /admin
+
+visiteur:
+    resource: "@visiteurBundle/Resources/config/routing.yml"
+    prefix:   /

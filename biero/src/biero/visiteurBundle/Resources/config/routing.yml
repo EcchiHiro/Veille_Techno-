@@ -1,0 +1,10 @@
+visiteur_homepage:
+    path:     /
+    defaults: { _controller: visiteurBundle:Visiteur:index }
+    
+visiteur_biere:
+    path:     /biere/{id}
+    defaults: { _controller: visiteurBundle:Visiteur:view }
+    requirements:
+        id: \d+
+    
